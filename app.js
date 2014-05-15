@@ -25,6 +25,7 @@ var connectAssets = require('connect-assets');
  */
 
 var homeController = require('./controllers/home');
+var quizController = require('./controllers/quiz');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
@@ -111,6 +112,16 @@ app.use(function(req, res, next) {
 /**
  * Application routes.
  */
+
+//My Own Routes
+app.get('/quiz', 
+        passportConf.isAuthenticated,
+        quizController.getQuiz);
+app.get('/quiz/start', 
+        passportConf.isAuthenticated,
+        quizController.getQuizStart);
+app.get('/leaderboard', 
+        homeController.getLeaderBoard);
 
 app.get('/', homeController.index);
 app.get('/login', userController.getLogin);
