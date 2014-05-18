@@ -14,6 +14,17 @@ var userSchema = new mongoose.Schema({
   linkedin: String,
   tokens: Array,
 
+  records: {
+      quiz1: { 
+          isDone: { type: Boolean, default: 'false' },
+          score: { type: String, default: '0' }
+      },
+      quiz2: { 
+          isDone: { type: Boolean, default: 'false' },
+          score: { type: String, default: '1' }
+      }
+  },
+    
   profile: {
     name: { type: String, default: '' },
     gender: { type: String, default: '' },
