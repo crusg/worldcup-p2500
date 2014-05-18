@@ -2,6 +2,8 @@ extends layout
 
 block content
   h1 Leading The Challenge...
-  ul
-    li
-      a(href="#") HEYHEY
+  for user in usersList
+     p(style='white-space:pre;')
+        |#{user.email}:
+        |quiz1 Score: #{user.records.quiz1.score}
+        |quiz2 Score: #{user.records.quiz2.score}
