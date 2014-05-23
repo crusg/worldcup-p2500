@@ -3,18 +3,21 @@ html
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no')
     meta(name='description', content='')
     meta(name='csrf-token', content=_csrf)
     meta(name='author', content='')
     title #{title} | P2500+
     != css('styles')
+    script(src='//use.edgefonts.net/sansita-one.js')
+    link(href='http://fonts.googleapis.com/css?family=Dosis:400,700,800')
   body
-    include partials/navigation
+    #wrap
+        include partials/navigation
 
-    .container
-      include partials/flash
-      block content
+        .container
+          include partials/flash
+          block content
 
     include partials/footer
 

@@ -1,9 +1,9 @@
 extends ../layout
 
 block content
-  form.form-horizontal(id='signup-form', method='POST')
+  form.form-horizontal.form-signin(id='signup-form', method='POST')
     input(type='hidden', name='_csrf', value=_csrf)
-    legend Signup
+    h1.form-signin-heading Signup
     .form-group
       label.col-sm-3.control-label(for='email') Email
       .col-sm-7
